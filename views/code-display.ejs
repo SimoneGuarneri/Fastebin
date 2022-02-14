@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fastebin</title>
+
+		<!-- HIGHLIGHTS.JS -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"
+			integrity="sha512-IaaKO80nPNs5j+VLxd42eK/7sYuXQmr+fyywCNA0e+C6gtQnuCXNtORe9xR4LqGPz5U9VpH+ff41wKs/ZmC3iA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/night-owl.min.css"
+			integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<script>
+			hljs.highlightAll();
+		</script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="/styles.css" />
+	</head>
+	<body>
+		<%- include("_buttons.ejs", {id: locals.id}) %> 
+		<div class="wrapper">
+			<div class="lineNumbers">
+				<% for(let i = 0; i < lineNumber; i++) { %>
+				<div><%= i %></div>
+				<% } %>
+			</div>
+			<pre><code 
+				id="codeDisplay" 
+				class="<%= locals.language ? `language-${locals.language}` : ''%>"
+			> <%= code %> </code>  </pre>
+		</div>
+	</body>
+</html>

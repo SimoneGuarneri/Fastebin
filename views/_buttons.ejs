@@ -1,0 +1,14 @@
+<div class="buttonsWrapper">
+    <a href="/" class="logo"><b>faste</b>bin</a>
+    <div class="buttons">
+        <a href="/new" class="btn">New</a>
+
+        <% if(locals.canSave) {%> 
+            <button class="btn" type="submit">S</button>
+        <% } %> 
+        <% if(locals.id != null) {%> 
+            <a href="/<%= locals.id %>/duplicate" class="btn">D</a>
+        <% } %> 
+
+    </div>
+</div>
