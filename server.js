@@ -1,5 +1,4 @@
-import express from "express";
-import { Request, Response } from 'express';
+const express = require("express")
 
 const app = express();
 
@@ -12,7 +11,7 @@ const Document = require("./models/document")
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/fastebin")
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req, res) => {
 
     const code = `Welcome to FasteBin!
 
@@ -21,11 +20,11 @@ app.get("/", (req: Request, res: Response) => {
     res.render("code-display", {code, lineNumber: code.split("\n").length, language: "plaintext"})
 })
 
-app.get("/new", (req: Request, res: Response) => {
+app.get("/new", (req, res) => {
     res.render("new");
 })
 
-app.post("/save", async (req: Request, res: Response) => {
+app.post("/save", async (req, res) => {
     const value = req.body.value;
 
     try {
@@ -39,7 +38,7 @@ app.post("/save", async (req: Request, res: Response) => {
     }
 })
 
-app.get("/:id", async (req: Request, res: Response) => {
+app.get("/:id", async (req, res) => {
     const id = req.params.id;
 
     try {
@@ -51,7 +50,7 @@ app.get("/:id", async (req: Request, res: Response) => {
     }
 })
 
-app.get("/:id/duplicate", async (req: Request, res: Response) => {
+app.get("/:id/duplicate", async (req, res) => {
     const id = req.params.id;
 
     try {

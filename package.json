@@ -2,9 +2,9 @@
   "name": "fastebin",
   "version": "1.0.0",
   "description": "Clone of Pastebin a type of online content-hosting service where users can store plain text.",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server.ts"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
