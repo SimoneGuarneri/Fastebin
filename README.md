@@ -1,6 +1,6 @@
 # Fastebin
 
-> Clone of Pastebin a type of online content-hosting service where users can store plain text.
+_**Clone of Pastebin a type of online content-hosting service where users can store plain text.**_
 
 ![Example](https://i.imgur.com/AhdPd1Z.png)
 ![Example](https://i.imgur.com/EPdXq8Z.png)
